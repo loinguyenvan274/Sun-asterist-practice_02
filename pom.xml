@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>spring-tutorial</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>6.1.14</spring.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.22.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.3.232</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.16</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <mainClass>com.example.spring.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+    ========================================================================================
+    GIẢI THÍCH POM.XML:
+    1. Quản lý dự án với Maven (Mục 2 trong hình ảnh):
+       - Maven giúp quản lý các thư viện (dependencies) và vòng đời build của ứng dụng Java.
+       - groupId, artifactId, version định danh dự án.
+
+    2. Các thư viện chính được sử dụng:
+       - spring-context: Cung cấp Spring IoC Container, Dependency Injection và Bean context.
+       - spring-jdbc: Cung cấp JdbcTemplate phục vụ Data access with JDBC.
+       - spring-aop & aspectjweaver: Cung cấp API lập trình hướng khía cạnh (AOP APIs) và xử lý proxy.
+       - h2: Cơ sở dữ liệu in-memory nhẹ, chạy trực tiếp trong RAM, không cần cài đặt SQL Server/MySQL bên ngoài.
+       - jakarta.annotation-api: Hỗ trợ các annotation vòng đời Bean (@PostConstruct, @PreDestroy).
+       - slf4j-simple: Hiển thị log của Spring ra màn hình console.
+       - exec-maven-plugin: Cho phép chạy trực tiếp hàm main bằng lệnh "mvn exec:java".
+    ========================================================================================
+    -->
+</project>

@@ -1,0 +1,7 @@
+com\example\spring\model\Product.class
+com\example\spring\repository\ProductRepository.class
+com\example\spring\config\AppConfig.class
+com\example\spring\aspect\LoggingAspect.class
+com\example\spring\service\ProductService.class
+com\example\spring\Main.class
+com\example\spring\repository\ProductRepository$ProductRowMapper.class
